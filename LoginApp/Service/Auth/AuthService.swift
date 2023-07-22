@@ -50,7 +50,6 @@ class AuthService {
         }.resume()
     }
     
-    //is @escaping necessary
     func signIn(data: Data?, response: URLResponse?, error: Error?, completion: @escaping AuthCompletion) {
         if error != nil || (response as! HTTPURLResponse).statusCode != 200 {
             return completion(nil, .FailedRequest)
